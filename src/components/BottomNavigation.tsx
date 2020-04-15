@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
+import AnimatedSplash from "react-native-animated-splash-screen";
 import Profile from '../screens/profile'
 import ToDoList from '../screens/todolist';
 import Home from '../screens/home';
@@ -12,7 +13,7 @@ const BottomTabs: FC = () => {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#00dc00',
       }}
     >
       <Tab.Screen
@@ -47,5 +48,6 @@ const BottomTabs: FC = () => {
       />
     </Tab.Navigator>
   );
+  
 }
 export default BottomTabs;

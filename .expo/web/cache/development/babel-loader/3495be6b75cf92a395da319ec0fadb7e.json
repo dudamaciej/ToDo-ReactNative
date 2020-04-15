@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var EXAMPLE_ACTIONS = 'EXAMPLE_ACTIONS';","map":{"version":3,"sources":["C:/Users/Maciej/Desktop/Projekty/ToDo-ReactNative/src/actions/types/example.ts"],"names":["EXAMPLE_ACTIONS"],"mappings":"AAAA,OAAO,IAAMA,eAAe,GAAG,iBAAxB","sourcesContent":["export const EXAMPLE_ACTIONS = 'EXAMPLE_ACTIONS';"]},"metadata":{},"sourceType":"module"}

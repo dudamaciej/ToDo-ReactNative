@@ -19,6 +19,7 @@
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-animated-splash-screen": "^1.0.7",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.7.1",
     "react-native-safe-area-context": "^0.7.3",
@@ -29,7 +30,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sharp": "^0.24.1",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
