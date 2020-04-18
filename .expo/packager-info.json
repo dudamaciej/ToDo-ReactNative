@@ -1,10 +1,10 @@
 {
-  "devToolsPort": 19002,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 1196,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPid": 955,
+  "expoServerNgrokUrl": "https://vp-iqt.anonymous.todo-reactnative.exp.direct",
+  "packagerNgrokUrl": "https://packager.vp-iqt.anonymous.todo-reactnative.exp.direct",
+  "ngrokPid": 970,
   "webpackServerPort": 19006
 }

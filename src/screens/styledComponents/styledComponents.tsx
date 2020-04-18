@@ -5,7 +5,6 @@ export const ProfilePage = styled.View`
     width: 100%;
     margin-top: 40px;
     flex:1;
-    
 `
 export const ProfileImage = styled.Image`
     marginTop: 30;
@@ -31,5 +30,38 @@ export const Address = styled.Text`
     marginTop:8;
     marginBottom: 8;
     font-size: 12px;
-
+`
+export const HomeContainer = styled.ScrollView`
+    width: 100%;
+    margin-top: 20px;
+    flex:1;
+`
+export const HomeView = styled.View`
+    align-items: center;
+`
+export const SampleImage = styled.Image`
+    align-self: center;
+    width: 300px;
+    height:200px;
+`
+export const Post = styled.View`
+    align-self: center;
+    marginTop: 20;
+    marginBottom: 20;
+  
+`
+export const PostText = styled.Text`
+    align-self: center;
+`
+export const PostLeft = styled(Post)`
+    align-self: flex-start;
+`
+export const PostRight = styled(Post)`
+    align-self: flex-end; 
+`
+export const PostRotated = styled(Post)`
+    align-self: center;
+    transform: rotate(90deg);
+    marginTop: 30;
+    
 `
