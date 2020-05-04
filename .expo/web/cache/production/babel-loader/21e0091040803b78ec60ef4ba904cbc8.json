@@ -1,0 +1,1 @@
+{"ast":null,"code":"","map":{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":["import React from 'react';\r\nimport {Header,ToDoContainer} from '../screens/styledComponents/styledComponents'\r\n\r\ninterface ButtonProps {\r\n    onPress: () => void;\r\n}"]},"metadata":{},"sourceType":"module"}

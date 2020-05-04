@@ -1,12 +1,20 @@
-import React from 'react';
-import { View, Text} from 'react-native';
+import React, { useState } from 'react';
+import {ToDoContainer} from '../screens/styledComponents/styledComponents';
+import Form from '../components/Form';
+import ListsContainer from '../components/ListsContainer';
  
 const ToDoList = props => {
+    const{formView, setFormView} = useState<boolean>(false);
     return (
-        <View>
-            <Text>Przyklad</Text>
-        </View>
+        <ToDoContainer>
+           {formView ?(
+               <Form></Form>
+           ):(
+               <ListsContainer></ListsContainer>
+           )}
+        </ToDoContainer>
     );
 };
  
 export default ToDoList;
+
