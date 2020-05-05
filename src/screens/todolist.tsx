@@ -8,9 +8,9 @@ const ToDoList = props => {
     return (
         <ToDoContainer>
            {formView ?(
-               <Form></Form>
+               <Form switchView={setFormView}></Form>
            ):(
-               <ListsContainer></ListsContainer>
+               <ListsContainer switchView={setFormView}></ListsContainer>
            )}
         </ToDoContainer>
     );

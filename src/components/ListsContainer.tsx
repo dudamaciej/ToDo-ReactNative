@@ -7,8 +7,11 @@ import {IState} from '../reducers/index';
 import {ITodoListReducer} from '../reducers/todoListReducer';
 import { ISingleElementList } from '../entities/todoSingleElement';
 
-const ListsContainer: FC = props =>{
+const ListsContainer: FC<{switchView(formView: boolean)}> = props =>{
     const todoListState = useSelector<IState, ITodoListReducer>(state => state.todoList)
+    const goToForm =() =>{
+        props.switchView(true);
+    }
     return{
 
         {todoListState.todoList.map((element: ISingleElementList,index: number) =>
@@ -17,7 +20,7 @@ const ListsContainer: FC = props =>{
                  <Text{element.description}></Text>
             </List>
         )}
-       
+       <CreateListButton onPress={goToForm}/>
     }
 };
 
