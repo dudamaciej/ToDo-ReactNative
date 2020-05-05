@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const CreateListButton: FC<ButtonProps> = props => {
     return (
-        <ButtonContainer>
+        <ButtonContainer onPress={props.onPress}>
             <ButtonText>+</ButtonText>
         </ButtonContainer>
     )
@@ -17,8 +17,6 @@ const CreateListButton: FC<ButtonProps> = props => {
 export default CreateListButton;
 
 const ButtonContainer = styled.TouchableOpacity`
-    position: 'absolute;
-    zIndex: 11;
     right: 20;
     bottom: 90;
     backgroundColor: #00dc00;

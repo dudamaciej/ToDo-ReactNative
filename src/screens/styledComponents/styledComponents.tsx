@@ -67,6 +67,6 @@ export const PostRotated = styled(Post)`
 export const ToDoContainer = styled.ScrollView`
     width: 100%;
     margin-top: 20px;
-    align-items: center;
+   
     flex:1;
 `

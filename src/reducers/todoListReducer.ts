@@ -1,11 +1,11 @@
-import * as actionTypes from '../actions/todolistTypes';
+import * as actionTypes from '../actions/types/todolistTypes';
 import {ISingleElementList} from '../entities/todoSingleElement'
 
 export interface ITodoListReducer {
-        todolist: ISingleElementList[];
+        todoList: ISingleElementList[];
 }
 
-const defaultState = (): ITodoListReducer => {(
+const defaultState = (): ITodoListReducer => ({
     todoList: [{
         title:'First',
         description:'First Description' 
@@ -15,7 +15,7 @@ const defaultState = (): ITodoListReducer => {(
         description:'Second Description'
     }]
     
-)};
+});
 
 
 export default (state = defaultState(),action: any): ITodoListReducer => {
@@ -23,7 +23,7 @@ export default (state = defaultState(),action: any): ITodoListReducer => {
         case actionTypes.SET_NEW_ELEMENT:{
             return{
                 ...state,
-                todolist:[...state.todolist, action.newElement]
+                todoList:[...state.todoList, action.newElement]
             }
         }
         default:{

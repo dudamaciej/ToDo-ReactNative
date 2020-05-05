@@ -2,26 +2,31 @@ import React, {FC, useState} from 'react';
 import styled from 'styled-components';
 import CreateListButton from '../components/CreateListButton';
 import {useSelector} from 'react-redux';
-import{Text} from 'react-native';
+import{Text,View} from 'react-native';
 import {IState} from '../reducers/index';
 import {ITodoListReducer} from '../reducers/todoListReducer';
 import { ISingleElementList } from '../entities/todoSingleElement';
 
-const ListsContainer: FC<{switchView(formView: boolean)}> = props =>{
+interface IListsConstainer{
+    openForm: () => void;
+}
+
+const ListsContainer: FC<IListsConstainer> = props =>{
     const todoListState = useSelector<IState, ITodoListReducer>(state => state.todoList)
     const goToForm =() =>{
-        props.switchView(true);
+        props.openForm();
     }
-    return{
-
+    return(
+        <View>
         {todoListState.todoList.map((element: ISingleElementList,index: number) =>
             <List key={index}>
-                <Text{element.title}></Text>
-                 <Text{element.description}></Text>
+                <Text>{element.title}</Text>
+                <Text>{element.description}</Text>
             </List>
         )}
        <CreateListButton onPress={goToForm}/>
-    }
+       </View>
+    )
 };
 
 export default ListsContainer;

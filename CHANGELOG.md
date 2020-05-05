@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.6] - 2020-05-05
+
+**Changes**
+
+-   todolist: change functions to open or close form
+-   ListContainer: change interface 
+-    Form: interface IForm 
+
 ## [0.0.5] - 2020-05-04
 
 **Changes**

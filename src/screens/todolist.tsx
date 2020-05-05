@@ -4,13 +4,20 @@ import Form from '../components/Form';
 import ListsContainer from '../components/ListsContainer';
  
 const ToDoList = props => {
-    const{formView, setFormView} = useState<boolean>(false);
+    const[formView, setFormView] = useState<boolean>(false);
+
+    const openForm = () => {
+        setFormView(true);
+    }
+    const closeForm = () => {
+        setFormView(false);
+    }
     return (
         <ToDoContainer>
            {formView ?(
-               <Form switchView={setFormView}></Form>
+               <Form closeForm={closeForm}></Form>
            ):(
-               <ListsContainer switchView={setFormView}></ListsContainer>
+               <ListsContainer openForm={openForm}></ListsContainer>
            )}
         </ToDoContainer>
     );

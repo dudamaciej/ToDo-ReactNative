@@ -1,14 +1,17 @@
 import React, {FC, useState} from 'react';
 import styled from 'styled-components';
 import {TextInput,View,Button} from 'react-native';
-import {useDispatch} from 'react-native';
+import {useDispatch} from 'react-redux';
 import {setNewElementToDoList} from '../actions/todolistActions';
 import {ISingleElementList} from '../entities/todoSingleElement'
 
 type setNewElementToDoList = ReturnType<typeof setNewElementToDoList>;
 
+interface IForm{
+    closeForm:() => void;
+}
 
-const Form: FC<{switchView}> = props =>{
+const Form: FC<IForm> = props =>{
     const dispatch = useDispatch();
     const[titleInput, setTitleInput] = useState<string>('');
     const[descriptionInput, setDescriptionInput] = useState<string>('');
@@ -25,17 +28,17 @@ const Form: FC<{switchView}> = props =>{
             description: descriptionInput
         }as ISingleElementList
         ));
-        props.switchView(false)
+        props.closeForm();
     }
 
 
-    return{
+    return(
         <View>
             <CustomTextInput value ={titleInput} onChange={titleValueChange} placeholder="Title"/>
             <CustomTextInput value ={descriptionInput} onChange={descriptionValueChange} placeholder="Description"/>
             <Button title="SAVE" onPress ={saveDate}/>
         </View>
-    }
+    )
 };
 
 export default Form;
