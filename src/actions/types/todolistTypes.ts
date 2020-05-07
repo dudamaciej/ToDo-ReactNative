@@ -1,1 +1,2 @@
-export const SET_NEW_ELEMENT = 'SET_NEW_ELEMENT';
+export const SET_NEW_LIST = 'SET_NEW_LIST';
+export const REMOVE_LIST = 'REMOVE_LIST';

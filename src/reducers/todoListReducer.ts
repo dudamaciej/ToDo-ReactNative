@@ -7,24 +7,27 @@ export interface ITodoListReducer {
 
 const defaultState = (): ITodoListReducer => ({
     todoList: [{
-        title:'First',
-        description:'First Description' 
+        title:'Sample',
+        description:'Sample Description',
+        index: Date.now().toString()
     },
-    {
-        title:'Second',
-        description:'Second Description'
-    }]
+   ]
     
 });
 
 
 export default (state = defaultState(),action: any): ITodoListReducer => {
     switch(action.type){
-        case actionTypes.SET_NEW_ELEMENT:{
+        case actionTypes.SET_NEW_LIST:{
             return{
                 ...state,
                 todoList:[...state.todoList, action.newElement]
             }
+        }
+        case actionTypes.REMOVE_LIST: {
+            return {...state,
+            todoList: state.todoList.filter(list => list.index != action.index) 
+            };
         }
         default:{
             return state;

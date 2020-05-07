@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.1.1] - 2020-05-07
+
+**Changes**
+
+-   Redesign Form, CreateListButton, todolist, Remove List Button
+-   New splash screen icon
+
+**Added**
+
+-   ISingleElementList: index added
+-   Components: RemoveListButton
+-   Actions: remove list
+-   Types: REMOVE_LIST
+-   Reducers: add remove list case
+
+## [0.1.0] - 2020-05-05
+
+**Changes**
+
+-   Redesign Form, CreateListButton, todolist
+
 ## [0.0.6] - 2020-05-05
 
 **Changes**

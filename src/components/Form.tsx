@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import styled from 'styled-components';
-import {TextInput,View,Button} from 'react-native';
+import {Header} from '../screens/styledComponents/styledComponents'
 import {useDispatch} from 'react-redux';
 import {setNewElementToDoList} from '../actions/todolistActions';
 import {ISingleElementList} from '../entities/todoSingleElement'
@@ -25,7 +25,8 @@ const Form: FC<IForm> = props =>{
     const saveDate = () => {
         dispatch<setNewElementToDoList>(setNewElementToDoList({
             title: titleInput,
-            description: descriptionInput
+            description: descriptionInput,
+            index: Date.now().toString(),
         }as ISingleElementList
         ));
         props.closeForm();
@@ -33,19 +34,44 @@ const Form: FC<IForm> = props =>{
 
 
     return(
-        <View>
+        <FormView>
+            <Header style={{fontWeight: 'bold'}}>────  ADD NEW TASK  ────</Header>
             <CustomTextInput value ={titleInput} onChange={titleValueChange} placeholder="Title"/>
             <CustomTextInput value ={descriptionInput} onChange={descriptionValueChange} placeholder="Description"/>
-            <Button title="SAVE" onPress ={saveDate}/>
-        </View>
+            <SaveButton onPress ={saveDate}>
+                <ButtonText style={{fontWeight: 'bold'}}>SAVE</ButtonText>
+            </SaveButton>
+        </FormView>
     )
 };
 
 export default Form;
 
+const SaveButton = styled.TouchableOpacity`
+    marginTop: 30px;
+    backgroundColor: #00dc00;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 90;
+    align-items: center;
+    justifyContent: center;
+    borderRadius: 10;
+`
+const ButtonText = styled.Text`
+    color: #fff;
+    fontSize: 20;
+`
+
+const FormView = styled.View`
+    marginTop: 50%;
+    align-items: center;
+    justifyContent: center;
+`
+
 const CustomTextInput = styled.TextInput`
-    border: 1px solid;
+    border: 2px solid  #00dc00;
     padding: 10px;
     color: black;
-    width: 100%;
+    width: 60%;
+    marginTop:30px;
 `
