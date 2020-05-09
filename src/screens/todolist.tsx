@@ -2,23 +2,24 @@ import React, { useState } from 'react';
 import {ToDoContainer} from '../screens/styledComponents/styledComponents';
 import Form from '../components/Form';
 import ListsContainer from '../components/ListsContainer';
- 
+import EditForm from '../components/EditForm';
+import {IListsConstainer} from '../components/ListsContainer'
 const ToDoList = props => {
-    const[formView, setFormView] = useState<boolean>(false);
-
+    
     const openForm = () => {
-        setFormView(true);
+        setView(<Form closeForm={closeView}/>);
     }
-    const closeForm = () => {
-        setFormView(false);
+    const openEditForm = () => {
+        setView(<EditForm closeForm={closeView}/>);
     }
+    const closeView = () => {
+        setView(<ListsContainer openEditForm={openEditForm} openForm={openForm}/>)
+    }
+    
+    const[ToDoView, setView] = useState(<ListsContainer openEditForm={openEditForm} openForm={openForm}/>);
     return (
         <ToDoContainer>
-           {formView ?(
-               <Form closeForm={closeForm}></Form>
-           ):(
-               <ListsContainer openForm={openForm}></ListsContainer>
-           )}
+           {ToDoView}
         </ToDoContainer>
     );
 };

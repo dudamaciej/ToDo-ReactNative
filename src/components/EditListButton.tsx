@@ -15,7 +15,7 @@ const CreateListButton: FC<ButtonProps> = props => {
 export default CreateListButton;
 
 const ButtonContainer = styled.TouchableOpacity`
-    backgroundColor: red;
+    backgroundColor: orange;
     padding:5px;
     width: 20px;
     height: 50px;

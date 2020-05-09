@@ -2,40 +2,19 @@ import React, {FC, useState} from 'react';
 import styled from 'styled-components';
 import {Header} from '../screens/styledComponents/styledComponents'
 import {useDispatch} from 'react-redux';
-import {setNewElementToDoList} from '../actions/todolistActions';
+import {editList} from '../actions/todolistActions';
 import {ISingleElementList} from '../entities/todoSingleElement'
 
-type setNewElementToDoList = ReturnType<typeof setNewElementToDoList>;
-
-interface IForm{
-    closeForm:() => void;
+interface IEditForm{
+    closeForm: () => void;
 }
 
-const Form: FC<IForm> = props =>{
-    const dispatch = useDispatch();
-    const[titleInput, setTitleInput] = useState<string>('');
-    const[descriptionInput, setDescriptionInput] = useState<string>('');
+const EditForm: FC<IEditForm> = props =>{
     
-    const titleValueChange = (txt) => {
-        setTitleInput(txt.nativeEvent.text);
-    }
-    const descriptionValueChange = (txt) => {
-        setDescriptionInput(txt.nativeEvent.text);
-    }
-    const saveDate = () => {
-        dispatch<setNewElementToDoList>(setNewElementToDoList({
-            title: titleInput,
-            description: descriptionInput,
-            index: Date.now().toString(),
-        }as ISingleElementList
-        ));
-        props.closeForm();
-    }
-
 
     return(
         <FormView>
-            <Header style={{fontWeight: 'bold'}}>────  ADD NEW TASK  ────</Header>
+            <Header style={{fontWeight: 'bold'}}>────  EDIT TASK  ────</Header>
             <CustomTextInput value ={titleInput} onChange={titleValueChange} placeholder="Title"/>
             <CustomTextInput value ={descriptionInput} onChange={descriptionValueChange} placeholder="Description"/>
             <SaveButton onPress ={saveDate}>
@@ -45,7 +24,7 @@ const Form: FC<IForm> = props =>{
     )
 };
 
-export default Form;
+export default EditForm;
 
 const SaveButton = styled.TouchableOpacity`
     marginTop: 30px;

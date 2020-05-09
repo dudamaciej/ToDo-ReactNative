@@ -2,6 +2,7 @@ import React, {FC, useState} from 'react';
 import styled from 'styled-components';
 import CreateListButton from '../components/CreateListButton';
 import RemoveListButton from '../components/RemoveListButton';
+import EditListButton from '../components/EditListButton';
 import {useSelector,useDispatch} from 'react-redux';
 import{Text,View, ScrollView} from 'react-native';
 import {IState} from '../reducers/index';
@@ -9,20 +10,26 @@ import {ITodoListReducer} from '../reducers/todoListReducer';
 import { ISingleElementList } from '../entities/todoSingleElement';
 import {Header} from '../screens/styledComponents/styledComponents'
 import{removeList} from '../actions/todolistActions';
-interface IListsConstainer{
+
+export interface IListsConstainer{
     openForm: () => void;
+    openEditForm: () => void;
 }
 
 const ListsContainer: FC<IListsConstainer> = props =>{
     const todoListState = useSelector<IState, ITodoListReducer>(state => state.todoList)
     const Dispatch = useDispatch();
+    
     const goToForm =() =>{
         props.openForm();
     }
+
     const deleteList = (index)=>{
         Dispatch(removeList(index));
       
     }
+   
+
     return(
         <Wrapper>
         <ScrollView>
@@ -32,12 +39,18 @@ const ListsContainer: FC<IListsConstainer> = props =>{
             </View>
             {todoListState.todoList.map((element: ISingleElementList,index: number) =>
                 <List key={index}>
-                    <View>
-                        <Title style={{fontWeight: 'bold'}}>{element.title}</Title>
-                        <Descritpion>{element.description}</Descritpion>
-                    </View>
-                    <RemoveListButton onPress={() => deleteList(element.index)} />
-                   
+                    <ListContent>
+                        <RowWrapper>
+                            <Title style={{fontWeight: 'bold'}}>{element.title}</Title>
+                        </RowWrapper>
+                        <RowWrapper>
+                            <Descritpion>{element.description}</Descritpion>
+                        </RowWrapper>
+                    </ListContent>
+                    <ButtonBox>
+                        <EditListButton onPress={props.openEditForm}/>
+                        <RemoveListButton onPress={() => deleteList(element.index)} />
+                    </ButtonBox>
                 </List>
             )}
             </View>
@@ -50,6 +63,19 @@ const ListsContainer: FC<IListsConstainer> = props =>{
 
 export default ListsContainer;
 
+const RowWrapper = styled.View`
+flexDirection: row; 
+`
+const ListContent = styled.View`
+    width: 70%;
+    flexDirection: column;
+    flexWrap: wrap;
+    flexGrow: 1;
+    flex:1;
+`
+const ButtonBox = styled.View`
+   flexDirection: row;
+`
 const Wrapper = styled.View`
     position: relative;
     flex:1;
@@ -61,17 +87,20 @@ const ButtonWrapper = styled.View`
     z-index: 999;
 `
 const List = styled.View`
-flexDirection: row;
-borderBottomColor: #00dc00;
-borderBottomWidth:  2;
-margin: 40px 20px 0 20px;
-justifyContent: space-between;
+    flexDirection: row;
+    justifyContent: space-between;
+    borderBottomColor: #00dc00;
+    borderBottomWidth:  2px;
+    margin: 40px 20px 0 20px;
+    width: 90%;
 `
 const Title = styled.Text`
-    marginBottom:5;
-    fontSize: 20;
+    flex:1;
+    fontSize: 20px;
+    flexWrap: wrap;
 `
 const Descritpion = styled.Text`
-    marginTop:5;
-    marginBottom:3;
+    flex1;
+    marginBottom:5px;
+    flexWrap: wrap;
 `

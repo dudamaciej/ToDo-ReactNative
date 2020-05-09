@@ -18,14 +18,14 @@ export default CreateListButton;
 
 const ButtonContainer = styled.TouchableOpacity`
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 0px;
+    top: 0px;
     backgroundColor: #00dc00;
-    width: 90;
-    height: 90;
+    width: 90px;
+    height: 90px;
     marginTop: 10px;
     marginRight:5px;
-    borderRadius: 50;
+    borderRadius: 50px;
     align-items: center;
     justifyContent: center;
     marginLeft: 10px;
@@ -33,6 +33,6 @@ const ButtonContainer = styled.TouchableOpacity`
 `
 const ButtonText = styled.Text`
     color: #fff;
-    fontSize: 30;
+    fontSize: 30px;
 `
 

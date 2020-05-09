@@ -1,46 +1,36 @@
 # ToDo-ReactNative
  
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Folders Structure**
 
-## Available Scripts
+- **actions** (actions for redux)
+- **assets** (img, fonts etc.)
+- **components** (only re useable part of code)
+- **constans** (only const variable)
+- **entities** (typing for typescript)
+- **reducers** (all reducers for redux)
+- **screens** (all apps screens (pages))
 
-In the project directory, you can run:
+## **Usage**
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Download and install expo app on your phone
+    - Android: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pl
+    - iOS: https://itunes.apple.com/us/app/expo-client/id982107779?mt=8
+    - after download app you must login to your profile in app
+2. Start project:
+    - you need node 11 (the newest version)
+    - go to root folder
+    - install yarn if you do not have
+    - yarn install
+    - npm install expo-cli --global
+    - expo start --android/ expo start --ios
+    - open http://localhost:19002 - Expo DevTools
+    - click 'Tunnel' in lower left corner screen
+    - in termin type "?" to open expo help
+    - in termin type "s" and login to your account
+3. Go to app in your phone
+4. Scan QR code or click on link
+5. Wait for download
+6. Test your app :) -> hot reload is default after every time if you save file.
+7. Building apk/ipa
+    - expo build:android / expo build:ios (https://docs.expo.io/versions/latest/distribution/building-standalone-apps)
+    - you can see progress: https://expo.io/builds

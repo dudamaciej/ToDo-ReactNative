@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.2] - 2020-05-09
+
+**Changes**
+
+-   Some changes in README
+-   Redesign single List View, list text wrap
+
+**Added**
+
+- Actions: edit list
+- Types: EDIT_LIST
+- Components: EditListButton, EditForm
+- added units in styled components
+
 ## [0.1.1] - 2020-05-07
 
 **Changes**

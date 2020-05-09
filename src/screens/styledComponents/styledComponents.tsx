@@ -7,28 +7,28 @@ export const ProfilePage = styled.View`
     flex:1;
 `
 export const ProfileImage = styled.Image`
-    marginTop: 30;
+    marginTop: 30px;
     width: 100px;
     height:100px;
-    marginBottom: 10;
-    borderRadius: 50;
+    marginBottom: 10px;
+    borderRadius: 50px;
 `
 export const Header = styled.Text`
     font-size: 16px;
     color: #00dc00;
-    marginBottom: 20;
-    marginTop:10;
+    marginBottom: 20px;
+    marginTop:10px;
 `
 export const AboutMe = styled.Text`
-    marginTop:8;
-    marginBottom: 8;
+    marginTop:8px;
+    marginBottom: 8px;
     font-size: 15px;
     textAlign: center;
 `
 export const Address = styled.Text`
     textAlign: center;
-    marginTop:8;
-    marginBottom: 8;
+    marginTop:8px;
+    marginBottom: 8px;
     font-size: 12px;
 `
 export const HomeContainer = styled.ScrollView`
@@ -46,8 +46,8 @@ export const SampleImage = styled.Image`
 `
 export const Post = styled.View`
     align-self: center;
-    marginTop: 20;
-    marginBottom: 20;
+    marginTop: 20px;
+    marginBottom: 20px;
   
 `
 export const PostText = styled.Text`
@@ -62,7 +62,7 @@ export const PostRight = styled(Post)`
 export const PostRotated = styled(Post)`
     align-self: center;
     transform: rotate(90deg);
-    marginTop: 30; 
+    marginTop: 30px; 
 `
 export const ToDoContainer = styled.View`
     width: 100%;

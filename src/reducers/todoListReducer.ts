@@ -25,9 +25,16 @@ export default (state = defaultState(),action: any): ITodoListReducer => {
             }
         }
         case actionTypes.REMOVE_LIST: {
-            return {...state,
-            todoList: state.todoList.filter(list => list.index != action.index) 
+            return {
+                ...state,
+                todoList: state.todoList.filter(list => list.index != action.index) 
             };
+        }
+        case actionTypes.EDIT_LIST:{
+            return {
+                ...state,
+                
+            }
         }
         default:{
             return state;
