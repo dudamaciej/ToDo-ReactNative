@@ -15,10 +15,11 @@ export const removeList =  (index) =>{
     }
 }
 
-export const editList = (newElement:ISingleElementList,index) =>{
+export const editList = (oldList:ISingleElementList,title: string, description: string) =>{
     return{
         type: actionTypes.EDIT_LIST,
-        newElement,
-        index,
+        oldList,
+        title,
+        description
     }
 }

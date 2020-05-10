@@ -13,7 +13,7 @@ import{removeList} from '../actions/todolistActions';
 
 export interface IListsConstainer{
     openForm: () => void;
-    openEditForm: () => void;
+    openEditForm: (element:ISingleElementList) => void;
 }
 
 const ListsContainer: FC<IListsConstainer> = props =>{
@@ -48,7 +48,7 @@ const ListsContainer: FC<IListsConstainer> = props =>{
                         </RowWrapper>
                     </ListContent>
                     <ButtonBox>
-                        <EditListButton onPress={props.openEditForm}/>
+                        <EditListButton onPress={() => props.openEditForm(element)}/>
                         <RemoveListButton onPress={() => deleteList(element.index)} />
                     </ButtonBox>
                 </List>

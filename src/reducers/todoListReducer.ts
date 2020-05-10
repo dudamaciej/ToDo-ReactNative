@@ -31,10 +31,21 @@ export default (state = defaultState(),action: any): ITodoListReducer => {
             };
         }
         case actionTypes.EDIT_LIST:{
-            return {
-                ...state,
-                
+            let editedlist = state.todoList.find(list=>{
+                return list.index === action.oldList.index;
+            })
+            let index = state.todoList.indexOf(editedlist)
+
+            editedlist = {
+                title: action.title,
+                description: action.description,
+                index: editedlist.index
             }
+            state.todoList[index]= editedlist;
+            
+            return state
+
+           
         }
         default:{
             return state;

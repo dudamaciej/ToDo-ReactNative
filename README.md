@@ -1,5 +1,7 @@
 # ToDo-ReactNative
- 
+
+This project is a simple ToDo React-Native app. Based on 3 screens (Home, Profile, ToDolist), two of them are just static examples of screens, but the third one is usable. You can add a task to your list (title and description), edit it and also delete. This project was made just to be familiar with React-Native.
+
 ## **Folders Structure**
 
 - **actions** (actions for redux)
@@ -9,6 +11,7 @@
 - **entities** (typing for typescript)
 - **reducers** (all reducers for redux)
 - **screens** (all apps screens (pages))
+- **tools** (reuseable tools)
 
 ## **Usage**
 

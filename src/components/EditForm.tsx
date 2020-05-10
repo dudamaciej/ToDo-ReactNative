@@ -1,24 +1,33 @@
-import React, {FC, useState} from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
-import {Header} from '../screens/styledComponents/styledComponents'
-import {useDispatch} from 'react-redux';
-import {editList} from '../actions/todolistActions';
-import {ISingleElementList} from '../entities/todoSingleElement'
+import { Header } from '../screens/styledComponents/styledComponents'
+import { useDispatch } from 'react-redux';
+import { editList } from '../actions/todolistActions';
+import { ISingleElementList } from '../entities/todoSingleElement'
 
-interface IEditForm{
+interface IEditForm {
     closeForm: () => void;
+    list: ISingleElementList;
 }
 
-const EditForm: FC<IEditForm> = props =>{
-    
+type editListType = ReturnType<typeof editList>;
 
-    return(
+const EditForm: FC<IEditForm> = props => {
+    const dispatch = useDispatch();
+    const [titleDraft, setTitleDraft] = useState<string>(props.list.title);
+    const [descriptionDraft, setDescriptionDraft] = useState<string>(props.list.description);
+
+    const saveeditedList = () =>{
+        dispatch<editListType>(editList(props.list,titleDraft,descriptionDraft))
+        props.closeForm();
+    }
+    return (
         <FormView>
-            <Header style={{fontWeight: 'bold'}}>────  EDIT TASK  ────</Header>
-            <CustomTextInput value ={titleInput} onChange={titleValueChange} placeholder="Title"/>
-            <CustomTextInput value ={descriptionInput} onChange={descriptionValueChange} placeholder="Description"/>
-            <SaveButton onPress ={saveDate}>
-                <ButtonText style={{fontWeight: 'bold'}}>SAVE</ButtonText>
+            <Header style={{ fontWeight: 'bold' }}>────  EDIT TASK  ────</Header>
+            <CustomTextInput value={titleDraft} onChangeText={text=> setTitleDraft(text)} />
+            <CustomTextInput value={descriptionDraft} onChangeText={text=> setDescriptionDraft(text)} />
+            <SaveButton onPress={saveeditedList}>
+                <ButtonText style={{ fontWeight: 'bold' }}>SAVE</ButtonText>
             </SaveButton>
         </FormView>
     )
